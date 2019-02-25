@@ -258,7 +258,7 @@ Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter
             </form>
             <!-- END FORGOT PASSWORD FORM -->
         </div>
-        <div class="copyright "> <?php $d = date("Y"); echo $d; ?> &copy; Perfect Motion 4 Life</div>
+        <div class="copyright "> <?php $d = date("Y"); echo $d; ?> &copy; Perfect Motion</div>
         <?php
           if(isset($connection))
           {
