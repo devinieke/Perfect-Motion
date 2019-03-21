@@ -100,65 +100,6 @@ Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter
                 $query = "INSERT INTO user(UserName, First_Name, Last_Name, PIN, verification_key, Email, Password, Salt, State, Phone_1, Image, Agent, Gender, City, Stars, Level)VALUES('{$userName}', '{$fName}', '{$lName}', '{$pin}','{$v_key}', '{$email}', '{$password}', '{$salt}', '{$state}', '{$mobile_conc}', '{$img}', '{$agent}', '{$gen}',  '{$city}', '0', '0')";
 
                 $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
-   /*
-                if($result)
-                {
-                    $subject = "Please Verify Your Account.";
-
-                    $mail = new PHPMailer();
-                    $mail->Host = $smtphost;
-                    $mail->SMTPAuth = true;
-                    $mail->Username = $smtpuser;
-                    $mail->Password = $smtppass;
-                    $mail->SMTPSecure = 'ssl';
-                    $mail->Port = 465;
-
-                    $mail->setFrom('no-reply@pm4life.org', 'Perfect Motion 4 Life');
-                    $mail->addAddress($email, $fName);
-
-                    $mail->Subject = $subject;
-                    $mail->Body = 'Dear '.$fName.' 
-	
-	
-Welcome to Perfect Motion 4 Live. In order to obtain access to all the features of your account, please verify your email address by click on the link below:
-
-	
-http://member.pm4life.org/verify.php?key='.$v_key.'
-
-Provided the above link is not working, you can as well copy the link  and paste it on your browser address bar. 
-
-http://member.pm4life.org/verify.php?key='.$v_key.'
-
-Your PIN is '.$pin.'
-
-If you have any questions about Perfect Motion 4 life, please visit 
-our Fequently Asked Question Section at http://www.pm4life.org/faq
-
-
-	
-Best Regards,
-
-====================================================
-
-Action Without Borders / pm4life.org
-302 Fifth Avenue, 11th Floor, New York, NY 10001, USA';
-
-                    if(!$mail->send())
-                    {
-                      echo 'Message could not be sent at this time';
-                      echo 'Mailer Error: '.$mail->ErrorInfo;
-                    }
-                    else
-                    {
-                      echo 'Message has been sent';
-                    }
-                }
-                else
-                {
-                    $errors['failed']='<p class="alert alert-danger">there may be a few errors</p>';
-                }
-                
-                */
 
                 $ref_check = "SELECT * FROM user WHERE UserName = '$ref'";
                 $ref_result = mysqli_query($connection, $ref_check) or die(mysqli_error($connection));  
@@ -174,25 +115,6 @@ Action Without Borders / pm4life.org
                       //merge_tree actions
                       $ref_insert = "INSERT INTO referral(ref_ID, Ben_ID, Interest, standby, Locked)VALUES('{$ref_ID}', '{$salt}', '500', 1, 1)";
                         $ref_test = mysqli_query($connection, $ref_insert) or die(mysqli_error($connection));
-                        
-                        
-                       //merge_tree actions
-
-                       //ref_track actions
-                       // $track = "SELECT * FROM ref_track WHERE Child_ID='$ref_Salt'";
-                       // $trackResult = mysqli_query($connection, $track) or die(mysqli_error($connection));
-
-                       // while($trackRow = mysqli_fetch_array($trackResult))
-                       // {
-                       //   $trackParent = $trackRow['Parent_ID'];
-
-                       //   $trackInsert = "INSERT INTO ref_track(Parent_ID, Child_ID)VALUES('{$trackParent}', '{$salt}')";
-                       //   $trackInsertResult = mysqli_query($connection, $trackInsert) or die(mysqli_error($connection));
-                       // }
-
-                       // $insertTrack = "INSERT INTO ref_track(Parent_ID, Child_ID)VALUES('{$salt}', '{$salt}')";
-                       // $insertTrackResult = mysqli_query($connection, $insertTrack) or die(mysqli_error($connection));
-                       //ref_track actions
 
                     }
                 }
